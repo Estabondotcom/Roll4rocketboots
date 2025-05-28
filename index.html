@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roll for Rocket Boots!!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sheet">
+    <!-- Name -->
+    <input type="text" class="name-field" placeholder="Enter Name">
+
+    <!-- EXP, Wounds, Luck -->
+    <div class="status">
+      <label>EXP: <input type="number" min="0" max="10"></label>
+      <label>Wounds:
+        <span>
+          <input type="checkbox"><input type="checkbox">
+          <input type="checkbox"><input type="checkbox">
+          <input type="checkbox">
+        </span>
+      </label>
+      <label>Luck: <input type="number" min="0" max="5"></label>
+    </div>
+
+    <!-- Skills Table -->
+    <div class="skills-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Skill</th><th>2DC</th><th>3DC</th><th>4DC</th><th>5DC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example Skill Row -->
+          <tr>
+            <td><input type="text" value="Do Anything"></td>
+            <td><input type="radio" name="skill0"></td>
+            <td><input type="radio" name="skill0"></td>
+            <td><input type="radio" name="skill0"></td>
+            <td><input type="radio" name="skill0" checked></td>
+          </tr>
+          <!-- Add more rows as needed -->
+          <tr><td><input type="text"></td><td><input type="radio" name="skill1"></td><td><input type="radio" name="skill1"></td><td><input type="radio" name="skill1"></td><td><input type="radio" name="skill1"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
