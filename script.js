@@ -1,23 +1,57 @@
+function createSkillInput(value = "") {
+  const container = document.createElement('div');
+  container.className = 'input-wrapper';
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'skill-input';
+  input.placeholder = 'New skill...';
+  input.value = value;
+  input.maxLength = 20;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.textContent = '✕';
+  button.className = 'delete-button';
+  button.onclick = () => container.remove();
+
+  container.appendChild(input);
+  container.appendChild(button);
+
+  return container;
+}
+
+function createItemInput(value = "") {
+  const container = document.createElement('div');
+  container.className = 'input-wrapper';
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'item-input';
+  input.placeholder = 'Item...';
+  input.value = value;
+  input.maxLength = 20;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.textContent = '✕';
+  button.className = 'delete-button';
+  button.onclick = () => container.remove();
+
+  container.appendChild(input);
+  container.appendChild(button);
+
+  return container;
+}
+
 function addSkill(value = "") {
   const container = document.getElementById('skills-container');
-  const newInput = document.createElement('input');
-  newInput.type = 'text';
-  newInput.className = 'skill-input';
-  newInput.placeholder = 'New skill...';
-  newInput.value = value;
-  newInput.maxLength = 20;
-  container.appendChild(newInput);
+  container.appendChild(createSkillInput(value));
 }
 
 function addItem(value = "") {
   const container = document.getElementById('items-container');
-  const newInput = document.createElement('input');
-  newInput.type = 'text';
-  newInput.className = 'item-input';
-  newInput.placeholder = 'Item...';
-  newInput.value = value;
-  newInput.maxLength = 20;
-  container.appendChild(newInput);
+  container.appendChild(createItemInput(value));
 }
 
 function saveData() {
@@ -71,3 +105,12 @@ function clearData() {
 
   alert('Character cleared.');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('skills-container').children.length === 0) {
+    addSkill('Do anything');
+  }
+  if (document.getElementById('items-container').children.length === 0) {
+    addItem();
+  }
+});

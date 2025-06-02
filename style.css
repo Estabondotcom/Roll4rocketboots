@@ -27,3 +27,19 @@ textarea {
   padding: 6px;
   font-family: monospace;
 }
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.delete-button {
+  background-color: #c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 14px;
+}
