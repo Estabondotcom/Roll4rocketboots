@@ -1,6 +1,24 @@
-function createSkillInput(value = "") {
+function createSkillInput(value = "", levels = [false, false, false, false]) {
   const container = document.createElement('div');
   container.className = 'input-wrapper';
+
+  const checkboxes = document.createElement('div');
+  checkboxes.className = 'skill-levels';
+
+  for (let i = 1; i <= 4; i++) {
+    const label = document.createElement('label');
+    label.className = 'level-label';
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'skill-level';
+    checkbox.dataset.level = i;
+    checkbox.checked = levels[i - 1];
+
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(i));
+    checkboxes.appendChild(label);
+  }
 
   const input = document.createElement('input');
   input.type = 'text';
@@ -15,6 +33,7 @@ function createSkillInput(value = "") {
   button.className = 'delete-button';
   button.onclick = () => container.remove();
 
+  container.appendChild(checkboxes);
   container.appendChild(input);
   container.appendChild(button);
 
@@ -44,9 +63,9 @@ function createItemInput(value = "") {
   return container;
 }
 
-function addSkill(value = "") {
+function addSkill(value = "", levels = [false, false, false, false]) {
   const container = document.getElementById('skills-container');
-  container.appendChild(createSkillInput(value));
+  container.appendChild(createSkillInput(value, levels));
 }
 
 function addItem(value = "") {
@@ -57,10 +76,15 @@ function addItem(value = "") {
 function saveData() {
   const name = document.getElementById('char-name').value;
 
-  const skillInputs = document.querySelectorAll('.skill-input');
+  const skillInputs = document.querySelectorAll('.input-wrapper .skill-input');
   const skills = [];
   skillInputs.forEach(input => {
-    if (input.value.trim() !== "") skills.push(input.value.trim());
+    const container = input.parentElement;
+    const checkboxes = container.querySelectorAll('.skill-level');
+    const levels = Array.from(checkboxes).map(cb => cb.checked);
+    if (input.value.trim() !== "") {
+      skills.push({ name: input.value.trim(), levels });
+    }
   });
 
   const itemInputs = document.querySelectorAll('.item-input');
@@ -82,7 +106,7 @@ function loadData() {
 
   const skillContainer = document.getElementById('skills-container');
   skillContainer.innerHTML = '';
-  data.skills.forEach(skill => addSkill(skill));
+  data.skills.forEach(skill => addSkill(skill.name, skill.levels));
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
