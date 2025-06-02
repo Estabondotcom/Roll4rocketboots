@@ -281,9 +281,9 @@ function clearData() {
 }
 
 function toggleWound(index) {
-  const buttons = document.querySelectorAll('.wounds button');
-  if (buttons[index]) {
-    buttons[index].classList.toggle('active');
+  const woundButtons = document.querySelectorAll('.wounds button');
+  if (woundButtons[index]) {
+    woundButtons[index].classList.toggle('active');
   }
 }
 
@@ -327,8 +327,9 @@ function loadData() {
   const woundButtons = document.querySelectorAll('.wounds button');
   if (data.wounds) {
     data.wounds.forEach((isActive, i) => {
-      if (isActive) woundButtons[i].classList.add('active');
-      else woundButtons[i].classList.remove('active');
+      if (woundButtons[i]) {
+        woundButtons[i].classList.toggle('active', isActive);
+      }
     });
   }
 
