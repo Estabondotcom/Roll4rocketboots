@@ -90,3 +90,25 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
+
+.counter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.counter button.active {
+  background-color: green;
+}

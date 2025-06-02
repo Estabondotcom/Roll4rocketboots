@@ -279,3 +279,80 @@ function clearData() {
 
   alert('Character cleared.');
 }
+
+function toggleWound(index) {
+  const button = document.querySelectorAll('.counter button')[index];
+  button.classList.toggle('active');
+}
+
+function saveData() {
+  const name = document.getElementById('char-name').value;
+  const exp = parseInt(document.getElementById('exp-value').textContent);
+  const luck = parseInt(document.getElementById('luck-value').textContent);
+  const wounds = Array.from(document.querySelectorAll('.counter button')).map(button => button.classList.contains('active'));
+
+  const skillInputs = document.querySelectorAll('.input-wrapper .skill-input');
+  const skills = [];
+  skillInputs.forEach(input => {
+    const container = input.parentElement;
+    const checkboxes = container.querySelectorAll('.skill-level');
+    const levels = Array.from(checkboxes).map(cb => cb.checked);
+    if (input.value.trim() !== "") {
+      skills.push({ name: input.value.trim(), levels });
+    }
+  });
+
+  const itemInputs = document.querySelectorAll('.item-input');
+  const items = [];
+  itemInputs.forEach(input => {
+    if (input.value.trim() !== "") items.push(input.value.trim());
+  });
+
+  const data = { name, exp, luck, wounds, skills, items };
+  localStorage.setItem('rfrbCharacter', JSON.stringify(data));
+  alert('Character saved!');
+}
+
+function loadData() {
+  const data = JSON.parse(localStorage.getItem('rfrbCharacter'));
+  if (!data) return alert('No saved character!');
+
+  document.getElementById('char-name').value = data.name;
+  document.getElementById('exp-value').textContent = data.exp ?? 0;
+  document.getElementById('luck-value').textContent = data.luck ?? 1;
+
+  const woundButtons = document.querySelectorAll('.counter button');
+  data.wounds.forEach((wound, index) => {
+    if (wound) woundButtons[index].classList.add('active');
+  });
+
+  const skillContainer = document.getElementById('skills-container');
+  skillContainer.innerHTML = '';
+  data.skills.forEach(skill => addSkill(skill.name, skill.levels));
+
+  const itemContainer = document.getElementById('items-container');
+  itemContainer.innerHTML = '';
+  data.items.forEach(item => addItem(item));
+
+  alert('Character loaded!');
+}
+
+function clearData() {
+  localStorage.removeItem('rfrbCharacter');
+  document.getElementById('char-form').reset();
+  document.getElementById('exp-value').textContent = '0';
+  document.getElementById('luck-value').textContent = '1';
+
+  const woundButtons = document.querySelectorAll('.counter button');
+  woundButtons.forEach(button => button.classList.remove('active'));
+
+  const skillContainer = document.getElementById('skills-container');
+  skillContainer.innerHTML = '';
+  addSkill('Do anything');
+
+  const itemContainer = document.getElementById('items-container');
+  itemContainer.innerHTML = '';
+  addItem();
+
+  alert('Character cleared.');
+}
