@@ -7,12 +7,12 @@
 <body>
   <h1>Roll for Rocket Boots</h1>
   <form id="char-form">
-    <label>Character Name: <input type="text" id="char-name" /></label><br><br>
+    <label>Character Name: <input type="text" id="char-name" maxlength="20" /></label><br><br>
 
     <h2>Skills</h2>
     <div id="skills-section">
       <div id="skills-container">
-        <input type="text" class="skill-input" value="Do anything" />
+        <input type="text" class="skill-input" value="Do anything" maxlength="20" />
       </div>
       <div style="margin-top: 10px;">
         <button type="button" onclick="addSkill()">+ New Skill</button>
@@ -20,7 +20,14 @@
     </div><br>
 
     <h2>Inventory</h2>
-    <textarea id="inventory" rows="5" cols="50" placeholder="List your gear..."></textarea><br><br>
+    <div id="items-section">
+      <div id="items-container">
+        <input type="text" class="item-input" maxlength="20" />
+      </div>
+      <div style="margin-top: 10px;">
+        <button type="button" onclick="addItem()">+ Add Item</button>
+      </div>
+    </div><br>
 
     <button type="button" onclick="saveData()">Save</button>
     <button type="button" onclick="loadData()">Load</button>

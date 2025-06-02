@@ -5,12 +5,23 @@ function addSkill(value = "") {
   newInput.className = 'skill-input';
   newInput.placeholder = 'New skill...';
   newInput.value = value;
+  newInput.maxLength = 20;
+  container.appendChild(newInput);
+}
+
+function addItem(value = "") {
+  const container = document.getElementById('items-container');
+  const newInput = document.createElement('input');
+  newInput.type = 'text';
+  newInput.className = 'item-input';
+  newInput.placeholder = 'Item...';
+  newInput.value = value;
+  newInput.maxLength = 20;
   container.appendChild(newInput);
 }
 
 function saveData() {
   const name = document.getElementById('char-name').value;
-  const inventory = document.getElementById('inventory').value;
 
   const skillInputs = document.querySelectorAll('.skill-input');
   const skills = [];
@@ -18,7 +29,13 @@ function saveData() {
     if (input.value.trim() !== "") skills.push(input.value.trim());
   });
 
-  const data = { name, skills, inventory };
+  const itemInputs = document.querySelectorAll('.item-input');
+  const items = [];
+  itemInputs.forEach(input => {
+    if (input.value.trim() !== "") items.push(input.value.trim());
+  });
+
+  const data = { name, skills, items };
   localStorage.setItem('rfrbCharacter', JSON.stringify(data));
   alert('Character saved!');
 }
@@ -28,13 +45,14 @@ function loadData() {
   if (!data) return alert('No saved character!');
 
   document.getElementById('char-name').value = data.name;
-  document.getElementById('inventory').value = data.inventory;
 
-  const container = document.getElementById('skills-container');
-  container.innerHTML = '';
-  data.skills.forEach(skill => {
-    addSkill(skill);
-  });
+  const skillContainer = document.getElementById('skills-container');
+  skillContainer.innerHTML = '';
+  data.skills.forEach(skill => addSkill(skill));
+
+  const itemContainer = document.getElementById('items-container');
+  itemContainer.innerHTML = '';
+  data.items.forEach(item => addItem(item));
 
   alert('Character loaded!');
 }
@@ -43,9 +61,13 @@ function clearData() {
   localStorage.removeItem('rfrbCharacter');
   document.getElementById('char-form').reset();
 
-  const container = document.getElementById('skills-container');
-  container.innerHTML = '';
+  const skillContainer = document.getElementById('skills-container');
+  skillContainer.innerHTML = '';
   addSkill('Do anything');
+
+  const itemContainer = document.getElementById('items-container');
+  itemContainer.innerHTML = '';
+  addItem();
 
   alert('Character cleared.');
 }

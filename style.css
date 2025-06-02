@@ -15,8 +15,15 @@ textarea {
   gap: 8px;
 }
 
-.skill-input {
-  width: 100%;
+#items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-input, .item-input, #char-name {
+  width: 250px;
+  max-width: 100%;
   padding: 6px;
   font-family: monospace;
 }
