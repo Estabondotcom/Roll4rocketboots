@@ -8,3 +8,15 @@ textarea {
   width: 100%;
   font-family: monospace;
 }
+
+#skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-input {
+  width: 100%;
+  padding: 6px;
+  font-family: monospace;
+}
