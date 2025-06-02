@@ -66,3 +66,21 @@ textarea {
   font-size: 20px;
   font-weight: bold;
 }
+
+#counters-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.counter-block h2 {
+  margin: 0 0 4px 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
