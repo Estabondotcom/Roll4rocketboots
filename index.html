@@ -1,50 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Roll for Rocket Boots!!</title>
+  <title>Roll for Rocket Boots - Character Sheet</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="sheet">
-    <!-- Name -->
-    <input type="text" class="name-field" placeholder="Enter Name">
+  <h1>Roll for Rocket Boots</h1>
+  <form id="char-form">
+    <label>Character Name: <input type="text" id="char-name" /></label><br><br>
 
-    <!-- EXP, Wounds, Luck -->
-    <div class="status">
-      <label>EXP: <input type="number" min="0" max="10"></label>
-      <label>Wounds:
-        <span>
-          <input type="checkbox"><input type="checkbox">
-          <input type="checkbox"><input type="checkbox">
-          <input type="checkbox">
-        </span>
-      </label>
-      <label>Luck: <input type="number" min="0" max="5"></label>
-    </div>
+    <h2>Skills</h2>
+    <textarea id="skills" rows="5" cols="50" placeholder="Enter skills here..."></textarea><br><br>
 
-    <!-- Skills Table -->
-    <div class="skills-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Skill</th><th>2DC</th><th>3DC</th><th>4DC</th><th>5DC</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Example Skill Row -->
-          <tr>
-            <td><input type="text" value="Do Anything"></td>
-            <td><input type="radio" name="skill0"></td>
-            <td><input type="radio" name="skill0"></td>
-            <td><input type="radio" name="skill0"></td>
-            <td><input type="radio" name="skill0" checked></td>
-          </tr>
-          <!-- Add more rows as needed -->
-          <tr><td><input type="text"></td><td><input type="radio" name="skill1"></td><td><input type="radio" name="skill1"></td><td><input type="radio" name="skill1"></td><td><input type="radio" name="skill1"></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <h2>Inventory</h2>
+    <textarea id="inventory" rows="5" cols="50" placeholder="List your gear..."></textarea><br><br>
+
+    <button type="button" onclick="saveData()">Save</button>
+    <button type="button" onclick="loadData()">Load</button>
+    <button type="button" onclick="clearData()">Clear</button>
+  </form>
+
+  <script src="script.js"></script>
 </body>
 </html>

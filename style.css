@@ -1,57 +1,10 @@
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #111;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f2f2f2;
 }
 
-.sheet {
-  position: relative;
-  width: 768px;
-  height: 994px;
-  margin: 0 auto;
-  background: url('ROLL_FOT_ROCKET_BOOTS.PNG') no-repeat center center;
-  background-size: cover;
-}
-
-.name-field {
-  position: absolute;
-  top: 160px;
-  left: 120px;
-  width: 140px;
-  font-size: 16px;
-}
-
-.status {
-  position: absolute;
-  top: 220px;
-  left: 60px;
-  background: rgba(255,255,255,0.7);
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.skills-table {
-  position: absolute;
-  top: 500px;
-  left: 30px;
-  width: 700px;
-  overflow-x: auto;
-  background: rgba(255,255,255,0.8);
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.skills-table table {
+textarea {
   width: 100%;
-  border-collapse: collapse;
-}
-
-.skills-table th,
-.skills-table td {
-  padding: 5px;
-  text-align: center;
-}
-
-input[type="text"] {
-  width: 100%;
+  font-family: monospace;
 }
