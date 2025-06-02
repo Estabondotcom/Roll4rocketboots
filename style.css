@@ -97,18 +97,24 @@ textarea {
   align-items: center;
 }
 
-.counter button {
+.wounds {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.wounds button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: red;
-  color: white;
+  background-color: #ccc;
+  color: #000;
   font-weight: bold;
   border: none;
-  margin: 5px;
   cursor: pointer;
 }
 
-.counter button.active {
-  background-color: green;
+.wounds button.active {
+  background-color: darkred;
+  color: white;
 }

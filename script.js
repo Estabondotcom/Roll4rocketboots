@@ -281,15 +281,18 @@ function clearData() {
 }
 
 function toggleWound(index) {
-  const button = document.querySelectorAll('.counter button')[index];
-  button.classList.toggle('active');
+  const buttons = document.querySelectorAll('.wounds button');
+  if (buttons[index]) {
+    buttons[index].classList.toggle('active');
+  }
 }
 
 function saveData() {
   const name = document.getElementById('char-name').value;
   const exp = parseInt(document.getElementById('exp-value').textContent);
   const luck = parseInt(document.getElementById('luck-value').textContent);
-  const wounds = Array.from(document.querySelectorAll('.counter button')).map(button => button.classList.contains('active'));
+  const woundButtons = document.querySelectorAll('.wounds button');
+  const wounds = Array.from(woundButtons).map(button => button.classList.contains('active'));
 
   const skillInputs = document.querySelectorAll('.input-wrapper .skill-input');
   const skills = [];
@@ -321,10 +324,13 @@ function loadData() {
   document.getElementById('exp-value').textContent = data.exp ?? 0;
   document.getElementById('luck-value').textContent = data.luck ?? 1;
 
-  const woundButtons = document.querySelectorAll('.counter button');
-  data.wounds.forEach((wound, index) => {
-    if (wound) woundButtons[index].classList.add('active');
-  });
+  const woundButtons = document.querySelectorAll('.wounds button');
+  if (data.wounds) {
+    data.wounds.forEach((isActive, i) => {
+      if (isActive) woundButtons[i].classList.add('active');
+      else woundButtons[i].classList.remove('active');
+    });
+  }
 
   const skillContainer = document.getElementById('skills-container');
   skillContainer.innerHTML = '';
@@ -343,7 +349,7 @@ function clearData() {
   document.getElementById('exp-value').textContent = '0';
   document.getElementById('luck-value').textContent = '1';
 
-  const woundButtons = document.querySelectorAll('.counter button');
+  const woundButtons = document.querySelectorAll('.wounds button');
   woundButtons.forEach(button => button.classList.remove('active'));
 
   const skillContainer = document.getElementById('skills-container');
