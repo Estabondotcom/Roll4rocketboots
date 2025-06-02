@@ -10,7 +10,9 @@
     <label>Character Name: <input type="text" id="char-name" /></label><br><br>
 
     <h2>Skills</h2>
-    <textarea id="skills" rows="5" cols="50" placeholder="Enter skills here..."></textarea><br><br>
+    <div id="skills-container">
+      <input type="text" class="skill-input" value="Do anything" oninput="handleSkillInput()" />
+    </div><br>
 
     <h2>Inventory</h2>
     <textarea id="inventory" rows="5" cols="50" placeholder="List your gear..."></textarea><br><br>
