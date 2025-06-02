@@ -58,3 +58,11 @@ textarea {
   font-size: 14px;
   align-self: flex-start;
 }
+
+#exp-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}

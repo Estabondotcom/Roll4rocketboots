@@ -9,6 +9,13 @@
   <form id="char-form">
     <label>Character Name: <input type="text" id="char-name" maxlength="20" /></label><br><br>
 
+    <h2>Exp.</h2>
+    <div id="exp-section">
+      <button type="button" onclick="adjustExp(-1)">⬇</button>
+      <span id="exp-value">0</span>
+      <button type="button" onclick="adjustExp(1)">⬆</button>
+    </div><br>
+
     <h2>Skills</h2>
     <div id="skills-section">
       <div id="skills-container"></div>
