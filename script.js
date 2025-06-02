@@ -1,16 +1,11 @@
-function handleSkillInput() {
+function addSkill(value = "") {
   const container = document.getElementById('skills-container');
-  const inputs = container.getElementsByClassName('skill-input');
-  const lastInput = inputs[inputs.length - 1];
-
-  if (lastInput.value.trim() !== "") {
-    const newInput = document.createElement('input');
-    newInput.type = 'text';
-    newInput.className = 'skill-input';
-    newInput.placeholder = 'New skill...';
-    newInput.oninput = handleSkillInput;
-    container.appendChild(newInput);
-  }
+  const newInput = document.createElement('input');
+  newInput.type = 'text';
+  newInput.className = 'skill-input';
+  newInput.placeholder = 'New skill...';
+  newInput.value = value;
+  container.appendChild(newInput);
 }
 
 function saveData() {
@@ -38,21 +33,8 @@ function loadData() {
   const container = document.getElementById('skills-container');
   container.innerHTML = '';
   data.skills.forEach(skill => {
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.className = 'skill-input';
-    input.value = skill;
-    input.oninput = handleSkillInput;
-    container.appendChild(input);
+    addSkill(skill);
   });
-
-  // Add one empty field
-  const newInput = document.createElement('input');
-  newInput.type = 'text';
-  newInput.className = 'skill-input';
-  newInput.placeholder = 'New skill...';
-  newInput.oninput = handleSkillInput;
-  container.appendChild(newInput);
 
   alert('Character loaded!');
 }
@@ -63,12 +45,7 @@ function clearData() {
 
   const container = document.getElementById('skills-container');
   container.innerHTML = '';
-  const input = document.createElement('input');
-  input.type = 'text';
-  input.className = 'skill-input';
-  input.value = 'Do anything';
-  input.oninput = handleSkillInput;
-  container.appendChild(input);
+  addSkill('Do anything');
 
   alert('Character cleared.');
 }
