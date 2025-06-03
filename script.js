@@ -143,7 +143,28 @@ function clearData() {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+
+    }
+  });
+
+  const savedTheme = localStorage.getItem("selectedTheme");
+  if (savedTheme && themes.includes(savedTheme)) {
+    document.body.classList.add("theme-" + savedTheme);
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Ensure at least one skill input on first load
+  if (document.getElementById('skills-container').children.length === 0) {
+    addSkill('Do anything');
+  }
+
+  if (document.getElementById('items-container').children.length === 0) {
+    // Optional default item logic can go here
+  }
+
+  // Theme logic
   const themes = ['green', 'blue', 'pink', 'mono'];
 
   themes.forEach(theme => {
