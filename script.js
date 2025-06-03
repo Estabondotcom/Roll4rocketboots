@@ -453,6 +453,10 @@ function uploadCharacter(event) {
 
 
 
+
+
+
+
 function addCondition(name = '', levels = [false, false, false]) {
   const container = document.getElementById('conditions-container');
 
@@ -464,6 +468,7 @@ function addCondition(name = '', levels = [false, false, false]) {
   input.className = 'skill-input';
   input.placeholder = 'New condition...';
   input.value = name;
+  input.maxLength = 20;
   wrapper.appendChild(input);
 
   const checkboxes = document.createElement('div');
@@ -478,5 +483,12 @@ function addCondition(name = '', levels = [false, false, false]) {
   }
 
   wrapper.appendChild(checkboxes);
+
+  const button = document.createElement('button');
+  button.className = 'remove-button';
+  button.innerHTML = '❌';
+  button.onclick = () => wrapper.remove();
+  wrapper.appendChild(button);
+
   container.appendChild(wrapper);
 }
