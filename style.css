@@ -10,6 +10,7 @@ body {
 }
 
 h1 {
+  text-align: center;
   font-size: 2.5em;
   color: #ff00ff;
   text-shadow: 2px 2px 0 #000;
@@ -169,12 +170,8 @@ textarea {
   cursor: pointer;
 }
 
-h1 {
-  text-align: center;
-}
-
 #main-container {
-  background-color: rgba(144, 238, 144, 0.7); /* light green with 70% opacity */
+  background-color: rgba(144, 238, 144, 0.7);
   padding: 20px;
   border-radius: 12px;
   max-width: 900px;
@@ -182,7 +179,7 @@ h1 {
 }
 
 label, h2 {
-  border: 3px solid rgba(255, 255, 0, 0.7); /* yellow border with 70% opacity */
+  border: 3px solid #ffff00;
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
