@@ -17,10 +17,8 @@
   <form id="char-form">
   <div style="margin-bottom: 10px;">
     <button type="button" onclick="downloadCharacter()">💾 Save to File</button>
-    <label style="cursor:pointer;">
-      📂 Load from File
-      <input type="file" accept=".json" onchange="uploadCharacter(event)" style="display:none;" />
-    </label>
+    <button type="button" onclick="document.getElementById('fileInput').click()">📂 Load from File</button>
+    <input type="file" id="fileInput" accept=".json" onchange="uploadCharacter(event)" style="display: none;" />
   </div>
     <label>Character Name: <input type="text" id="char-name" maxlength="20" /></label><br><br>
 
