@@ -1,76 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Roll for Rocket Boots - Character Sheet</title>
+  <title>Roll for Rocket Boots</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Roll for Rocket Boots</h1>
-    <button id="rules-button" type="button" onclick="toggleRules()">📖 Rules</button>
-    <div id="rules-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="toggleRules()">&times;</span>
-        <img src="rules/1.png" alt="Rule Page 1" />
-        <img src="rules/2.png" alt="Rule Page 2" />
-      </div>
+  <button id="rules-button" onclick="toggleRules()">📖 Rules</button>
+  <div id="rules-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleRules()">&times;</span>
+      <img src="rules/1.png" alt="Rule Page 1" />
+      <img src="rules/2.png" alt="Rule Page 2" />
     </div>
-  <form id="char-form">
-  <div style="margin-bottom: 10px;">
-    <button type="button" onclick="downloadCharacter()">💾 Save to File</button>
-    <button type="button" onclick="document.getElementById('fileInput').click()">📂 Load from File</button>
-    <input type="file" id="fileInput" accept=".json" onchange="uploadCharacter(event)" style="display: none;" />
   </div>
-    <label>Character Name: <input type="text" id="char-name" maxlength="20" /></label><br><br>
-
-    <div id="counters-section">
-      <div class="counter-block">
-        <h2>Exp.</h2>
-        <div class="counter">
-          <button type="button" onclick="adjustExp(-1)">⬇</button>
-          <span id="exp-value">0</span>
-          <button type="button" onclick="adjustExp(1)">⬆</button>
-        </div>
-      </div>
-
-      <div class="counter-block">
-        <h2>Luck</h2>
-        <div class="counter">
-          <button type="button" onclick="adjustLuck(-1)">⬇</button>
-          <span id="luck-value">1</span>
-          <button type="button" onclick="adjustLuck(1)">⬆</button>
-        </div>
-      </div>
-
-      <div class="counter-block">
-        <h2>Wounds</h2>
-        <div class="wounds">
-          <button type="button" onclick="toggleWound(0)">X</button>
-          <button type="button" onclick="toggleWound(1)">X</button>
-          <button type="button" onclick="toggleWound(2)">X</button>
-          <button type="button" onclick="toggleWound(3)">X</button>
-        </div>
-      </div>
-    </div><br>
-
-    <h2>Skills</h2>
-    <div id="skills-section">
-      <div id="skills-container"></div>
-      <div style="margin-top: 10px;">
-        <button type="button" onclick="addSkill()">+ New Skill</button>
-      </div>
-    </div><br>
-
-    <h2>Inventory</h2>
-    <div id="items-section">
-      <div id="items-container"></div>
-      <div style="margin-top: 10px;">
-        <button type="button" onclick="addItem()">+ Add Item</button>
-      </div>
-    </div><br>
-
-    <button type="button" onclick="clearData()">Clear</button>
-  </form>
-
   <script src="script.js"></script>
 </body>
 </html>
