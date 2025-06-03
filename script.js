@@ -513,3 +513,22 @@ const savedTheme = localStorage.getItem('selectedTheme');
 if (savedTheme && themes.includes(savedTheme)) {
   document.body.className = `theme-${savedTheme}`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themes = ['green', 'blue', 'pink', 'mono'];
+
+  themes.forEach(theme => {
+    const btn = document.querySelector(`.palette-${theme}`);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        document.body.className = `theme-${theme}`;
+        localStorage.setItem('selectedTheme', theme);
+      });
+    }
+  });
+
+  const savedTheme = localStorage.getItem('selectedTheme');
+  if (savedTheme && themes.includes(savedTheme)) {
+    document.body.className = `theme-${savedTheme}`;
+  }
+});
