@@ -493,3 +493,23 @@ document.getElementById('clear').addEventListener('click', function() {
   if (!confirm('Are you sure you wish to clear this character?')) return;
   // Add actual clear logic here if needed
 });
+
+
+// Theme switching
+const themes = ['green', 'blue', 'pink', 'mono'];
+
+themes.forEach(theme => {
+  const btn = document.querySelector(`.palette-${theme}`);
+  if (btn) {
+    btn.addEventListener('click', () => {
+      document.body.className = `theme-${theme}`;
+      localStorage.setItem('selectedTheme', theme);
+    });
+  }
+});
+
+// Load saved theme on page load
+const savedTheme = localStorage.getItem('selectedTheme');
+if (savedTheme && themes.includes(savedTheme)) {
+  document.body.className = `theme-${savedTheme}`;
+}

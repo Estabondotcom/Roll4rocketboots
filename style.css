@@ -315,3 +315,49 @@ label[for="player-name"] {
   align-items: center;
   gap: 4px;
 }
+
+
+/* Palette Buttons */
+#palette-buttons {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  gap: 6px;
+}
+
+.palette-btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Theme Colors */
+.palette-green { background-color: #b5dca2; }
+.palette-blue { background-color: #a2d5f2; }
+.palette-pink { background-color: #ffd6e0; }
+.palette-mono { background-color: #cccccc; }
+
+/* Main theme classes */
+body.theme-green {
+  background-color: #b5dca2;
+  color: #1d2b1f;
+}
+
+body.theme-blue {
+  background-color: #a2d5f2;
+  color: #0d1b2a;
+}
+
+body.theme-pink {
+  background-color: #ffd6e0;
+  color: #44001a;
+}
+
+body.theme-mono {
+  background-color: #f4f4f4;
+  color: #222222;
+}
