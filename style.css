@@ -231,3 +231,20 @@ label[for="player-name"] {
   width: 250px;
   box-shadow: inset 2px 2px #888;
 }
+
+.condition-input {
+  width: 250px;
+  margin: 5px;
+  font-size: 16px;
+  padding: 6px;
+  font-family: monospace;
+  border: 2px solid #000;
+  background-color: #fff6d1;
+  box-shadow: inset 2px 2px #888;
+}
+
+#conditions-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}

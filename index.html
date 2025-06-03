@@ -48,6 +48,16 @@
 </div>
 </div>
 </div><br/>
+<div id="conditions-section">
+<div class="section-label">CONDITIONS</div>
+<div id="conditions-container">
+<div class="condition-entry">
+<input class="condition-input" maxlength="20" placeholder="Enter condition" type="text"/>
+<button class="delete-button" onclick="this.parentElement.remove()">❌</button>
+</div>
+</div>
+<button class="add-button" onclick="addCondition()">➕ Add Condition</button>
+</div>
 <h2>Skills</h2>
 <div id="skills-section">
 <div id="skills-container"></div>
@@ -84,6 +94,15 @@ function downloadCharacter() {
   link.click();
   document.body.removeChild(link);
   URL.revokeObjectURL(url);
+}
+</script><script>
+function addCondition() {
+  const container = document.getElementById("conditions-container");
+  const div = document.createElement("div");
+  div.className = "condition-entry";
+  div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Enter condition">' +
+                  '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
+  container.appendChild(div);
 }
 </script></body>
 </html>
