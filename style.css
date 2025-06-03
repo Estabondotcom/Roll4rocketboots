@@ -191,6 +191,11 @@ label, h2 {
   border-radius: 6px;
   display: inline-block;
 }
+
 label[for="character-name"] {
-  font-size: 36px;
+  font-size: 1.5em;
+  background-color: rgba(255, 255, 0, 0.7);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
 }
