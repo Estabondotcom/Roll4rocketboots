@@ -402,7 +402,9 @@ function downloadCharacter() {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = `${name || "character"}.json`;
+  document.body.appendChild(a);
   a.click();
+  document.body.removeChild(a);
 }
 
 function uploadCharacter(event) {
