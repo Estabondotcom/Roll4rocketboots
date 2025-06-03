@@ -192,7 +192,6 @@ label, h2 {
   display: inline-block;
 }
 
-label[for="character-name"] {
   font-size: 1.5em;
   background-color: rgba(255, 255, 0, 0.7);
   padding: 4px 8px;
