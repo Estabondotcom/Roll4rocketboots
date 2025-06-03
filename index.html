@@ -6,6 +6,14 @@
 </head>
 <body>
   <h1>Roll for Rocket Boots</h1>
+    <button id="rules-button" type="button" onclick="toggleRules()">📖 Rules</button>
+    <div id="rules-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="toggleRules()">&times;</span>
+        <img src="rules/1.png" alt="Rule Page 1" />
+        <img src="rules/2.png" alt="Rule Page 2" />
+      </div>
+    </div>
   <form id="char-form">
     <label>Character Name: <input type="text" id="char-name" maxlength="20" /></label><br><br>
 

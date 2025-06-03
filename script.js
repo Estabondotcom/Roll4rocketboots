@@ -363,3 +363,12 @@ function clearData() {
 
   alert('Character cleared.');
 }
+
+function toggleRules() {
+  const modal = document.getElementById('rules-modal');
+  if (modal.style.display === "block") {
+    modal.style.display = "none";
+  } else {
+    modal.style.display = "block";
+  }
+}
