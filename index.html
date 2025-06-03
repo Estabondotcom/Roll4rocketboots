@@ -139,6 +139,7 @@ body.theme-sea #page-wrapper {
 </head>
 <body class="theme-default">
 <div id="page-wrapper">
+<div id="page-wrapper">
 <button id="rules-button" onclick="toggleRules()" style="position: absolute; top: 10px; left: 10px; z-index: 1000;" type="button">📖 Rules</button><div id="main-container">
 <div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots!</h1></div>
 <div class="modal" id="rules-modal">
@@ -251,36 +252,7 @@ function addCondition() {
 
 
 
-<div id="filter-buttons">
-  <button class="theme-button" onclick="applyTheme('default')"></button>
-  <button class="theme-button" onclick="applyTheme('sea')"></button>
-  <button class="filter-button" onclick="applyFilter('grayscale')"></button>
-  <button class="filter-button" onclick="applyFilter('sepia')"></button>
-  <button class="filter-button" onclick="applyFilter('invert')"></button>
-</div>
 
-
-  <button class="filter-button" onclick="applyFilter('grayscale')"></button>
-  <button class="filter-button" onclick="applyFilter('sepia')"></button>
-  <button class="filter-button" onclick="applyFilter('invert')"></button>
-</div>
-
-<script>
-function applyFilter(type) {
-  const body = document.body;
-  const buttons = document.querySelectorAll('.filter-button');
-
-  body.classList.remove('filter-grayscale', 'filter-sepia', 'filter-invert');
-  buttons.forEach(btn => btn.classList.remove('selected'));
-
-  const filterClass = `filter-${type}`;
-  if (!body.classList.contains(filterClass)) {
-    body.classList.add(filterClass);
-    const index = ['grayscale', 'sepia', 'invert'].indexOf(type);
-    if (index !== -1) buttons[index].classList.add('selected');
-  }
-}
-</script>
 
 </div>
 </div>
@@ -310,5 +282,40 @@ function applyTheme(theme) {
 }
 </script>
 
+
+<div id="filter-buttons">
+  <button class="theme-button" onclick="applyTheme('default')"></button>
+  <button class="theme-button" onclick="applyTheme('sea')"></button>
+  <button class="filter-button" onclick="applyFilter('grayscale')"></button>
+  <button class="filter-button" onclick="applyFilter('sepia')"></button>
+  <button class="filter-button" onclick="applyFilter('invert')"></button>
+</div>
+
+<script>
+function applyFilter(type) {
+  const body = document.body;
+  const buttons = document.querySelectorAll('.filter-button');
+  body.classList.remove('filter-grayscale', 'filter-sepia', 'filter-invert');
+  buttons.forEach(btn => btn.classList.remove('selected'));
+  const filterClass = `filter-${type}`;
+  if (!body.classList.contains(filterClass)) {
+    body.classList.add(filterClass);
+    const index = ['grayscale', 'sepia', 'invert'].indexOf(type);
+    if (index !== -1) buttons[index].classList.add('selected');
+  }
+}
+
+function applyTheme(theme) {
+  const body = document.body;
+  const buttons = document.querySelectorAll('.theme-button');
+  body.classList.remove('theme-default', 'theme-sea');
+  body.classList.add('theme-' + theme);
+  buttons.forEach(btn => btn.classList.remove('selected'));
+  const index = ['default', 'sea'].indexOf(theme);
+  if (index !== -1) buttons[index].classList.add('selected');
+}
+</script>
+
+</div>
 </body>
 </html>
