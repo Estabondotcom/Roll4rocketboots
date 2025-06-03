@@ -103,5 +103,14 @@ function addCondition() {
                   '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
   container.appendChild(div);
 }
+</script><script>
+function addCondition() {
+  const container = document.getElementById("conditions-container");
+  const div = document.createElement("div");
+  div.className = "condition-entry";
+  div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Condition..." />' +
+                  '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
+  container.appendChild(div);
+}
 </script></body>
 </html>
