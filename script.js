@@ -128,8 +128,6 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
-  addItem();
-
   alert('Character cleared.');
 }
 
@@ -138,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     addSkill('Do anything');
   }
   if (document.getElementById('items-container').children.length === 0) {
-    addItem();
   }
 });
 
@@ -209,8 +206,6 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
-  addItem();
-
   alert('Character cleared.');
 }
 
@@ -284,8 +279,6 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
-  addItem();
-
   alert('Character cleared.');
 }
 
@@ -371,8 +364,6 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
-  addItem();
-
   alert('Character cleared.');
 }
 
