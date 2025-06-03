@@ -488,3 +488,8 @@ function addCondition(name = '', levels = [false, false, false]) {
 
   container.appendChild(wrapper);
 }
+
+document.getElementById('clear').addEventListener('click', function() {
+  if (!confirm('Are you sure you wish to clear this character?')) return;
+  // Add actual clear logic here if needed
+});
