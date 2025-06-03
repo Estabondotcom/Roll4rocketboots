@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
 
 body {
-  background: repeating-linear-gradient(45deg, #d4f23c, #d4f23c 10px, #ffe75c 10px, #ffe75c 20px);
+  background: url('background/br1.png') repeat;
   font-family: 'Bungee', cursive;
   color: #222;
   padding: 20px;
