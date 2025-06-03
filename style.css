@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
 
 body {
+  margin: 0;
+  padding: 0;
+}
+
+#page-wrapper {
   background: url('background/br1.png') repeat;
   font-family: 'Bungee', cursive;
   color: #222;

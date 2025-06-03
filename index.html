@@ -11,14 +11,22 @@
 
 
 
+
+
+
 <style>
-body.filter-grayscale {
+#page-wrapper {
+  min-height: 100vh;
+  transition: filter 0.3s ease;
+}
+
+body.filter-grayscale #page-wrapper {
   filter: grayscale(100%);
 }
-body.filter-sepia {
+body.filter-sepia #page-wrapper {
   filter: sepia(100%);
 }
-body.filter-invert {
+body.filter-invert #page-wrapper {
   filter: invert(100%);
 }
 
@@ -64,6 +72,7 @@ body.filter-invert {
 
 </head>
 <body>
+<div id="page-wrapper">
 <button id="rules-button" onclick="toggleRules()" style="position: absolute; top: 10px; left: 10px; z-index: 1000;" type="button">📖 Rules</button><div id="main-container">
 <div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots!</h1></div>
 <div class="modal" id="rules-modal">
@@ -192,5 +201,6 @@ function applyFilter(type) {
 }
 </script>
 
+</div>
 </body>
 </html>
