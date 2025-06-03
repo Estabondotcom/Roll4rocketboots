@@ -295,15 +295,3 @@ label[for="player-name"] {
   grid-column: 1 / -1;
   margin: 0;
 }
-
-
-/* Dark Theme */
-body.theme-dark #page-wrapper {
-  background-color: #1e1e1e;
-  color: #dddddd;
-}
-
-
-.theme-button:nth-child(3) {
-  background: linear-gradient(to bottom, #333, #111);
-}
