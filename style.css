@@ -274,12 +274,20 @@ label[for="player-name"] {
 
 .exp-section, .luck-section {
   display: grid;
-  grid-template-rows: auto auto;
   grid-template-columns: auto auto auto;
-  justify-items: center;
+  grid-template-rows: auto auto;
+  gap: 4px;
   align-items: center;
-  gap: 5px;
-  text-align: center;
+  justify-items: center;
+}
+
+.exp-label, .luck-label {
+  grid-column: 2 / 3;
+  font-weight: bold;
+  font-size: 1.2em;
+  background: #ff0;
+  padding: 2px 6px;
+  border-radius: 3px;
 }
 
 .exp-section h2,
