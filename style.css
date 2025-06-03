@@ -343,22 +343,31 @@ label[for="player-name"] {
 .palette-mono { background-color: #cccccc; }
 
 /* Main theme classes */
-body.theme-green {
+
+
+
+
+
+
+
+
+
+body.theme-green, body.theme-green input, body.theme-green button {
   background-color: #b5dca2;
   color: #1d2b1f;
 }
 
-body.theme-blue {
+body.theme-blue, body.theme-blue input, body.theme-blue button {
   background-color: #a2d5f2;
   color: #0d1b2a;
 }
 
-body.theme-pink {
+body.theme-pink, body.theme-pink input, body.theme-pink button {
   background-color: #ffd6e0;
   color: #44001a;
 }
 
-body.theme-mono {
+body.theme-mono, body.theme-mono input, body.theme-mono button {
   background-color: #f4f4f4;
   color: #222222;
 }
