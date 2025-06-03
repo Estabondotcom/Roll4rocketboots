@@ -2,12 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-}
-
-#page-wrapper {
-  
+  background: url('background/br1.png') repeat;
   font-family: 'Bungee', cursive;
   color: #222;
   padding: 20px;
@@ -302,24 +297,13 @@ label[for="player-name"] {
 }
 
 
-/* Theme Backgrounds */
-
-
-
-
-
-body.theme-default #page-wrapper {
-  background-image: url('background/br1.png');
-  background-repeat: repeat;
-  background-size: initial;
-  background-position: top left;
-  color: #222;
+/* Dark Theme */
+body.theme-dark #page-wrapper {
+  background-color: #1e1e1e;
+  color: #dddddd;
 }
 
-body.theme-sea #page-wrapper {
-  background-image: url('background/br2.png');
-  background-repeat: repeat;
-  background-size: initial;
-  background-position: top left;
-  color: #e0f7ff;
+
+.theme-button:nth-child(3) {
+  background: linear-gradient(to bottom, #333, #111);
 }
