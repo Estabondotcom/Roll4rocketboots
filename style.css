@@ -247,3 +247,13 @@ label[for="player-name"] {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+.condition-input {
+  width: 250px;
+  font-size: 16px;
+  padding: 6px;
+  font-family: monospace;
+  border: 2px solid #000;
+  background-color: #fff6d1;
+  box-shadow: inset 2px 2px #888;
+  margin: 4px 0;
+}

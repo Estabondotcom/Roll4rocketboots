@@ -48,7 +48,6 @@
 </div>
 </div>
 </div><br/>
-
 <h2>Skills</h2>
 <div id="skills-section">
 <div id="skills-container"></div>
@@ -92,6 +91,15 @@ function addCondition() {
   const div = document.createElement("div");
   div.className = "condition-entry";
   div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Enter condition">' +
+                  '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
+  container.appendChild(div);
+}
+</script><script>
+function addCondition() {
+  const container = document.getElementById("conditions-container");
+  const div = document.createElement("div");
+  div.className = "condition-entry";
+  div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Condition..." />' +
                   '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
   container.appendChild(div);
 }
