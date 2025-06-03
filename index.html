@@ -65,5 +65,25 @@
 <button onclick="clearData()" type="button">Clear</button>
 </form>
 <script src="script.js"></script>
-</div><div id="bottom-buttons" style="margin-top: 20px; text-align: center;"></div></body>
+</div><div id="bottom-buttons" style="margin-top: 20px; text-align: center;"></div><script>
+function downloadCharacter() {
+  const characterData = {
+    name: document.getElementById("player-name")?.value || "",
+    exp: document.getElementById("exp-value")?.textContent || 0,
+    luck: document.getElementById("luck-value")?.textContent || 1,
+    skills: Array.from(document.querySelectorAll('.skill-input')).map(input => input.value),
+    items: Array.from(document.querySelectorAll('.item-input')).map(input => input.value)
+  };
+
+  const blob = new Blob([JSON.stringify(characterData, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "character.json";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+</script></body>
 </html>
