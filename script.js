@@ -63,7 +63,7 @@ function createItemInput(value = "") {
   return container;
 }
 
-function addSkill(value = "", levels = [false, false, false, false]) {
+function addSkill(value = "", levels = [true, false, false, false]) {
   const container = document.getElementById('skills-container');
   container.appendChild(createSkillInput(value, levels));
 }
