@@ -265,3 +265,7 @@ label[for="player-name"] {
 .skills-title {
   font-size: 2.535em;
 }
+
+.wounds-section {
+  text-align: center;
+}
