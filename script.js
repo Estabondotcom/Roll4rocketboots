@@ -16,7 +16,7 @@ function createSkillInput(value = "", levels = [false, false, false, false]) {
     checkbox.checked = levels[i - 1];
 
     label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(i));
+    label.appendChild(document.createTextNode((i + 1) + "🎲"));
     checkboxes.appendChild(label);
   }
 
@@ -128,6 +128,8 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
+  addItem();
+
   alert('Character cleared.');
 }
 
@@ -136,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addSkill('Do anything');
   }
   if (document.getElementById('items-container').children.length === 0) {
+    addItem();
   }
 });
 
@@ -206,6 +209,8 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
+  addItem();
+
   alert('Character cleared.');
 }
 
@@ -279,6 +284,8 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
+  addItem();
+
   alert('Character cleared.');
 }
 
@@ -364,6 +371,8 @@ function clearData() {
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
+  addItem();
+
   alert('Character cleared.');
 }
 
