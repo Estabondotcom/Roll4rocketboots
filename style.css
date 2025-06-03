@@ -232,32 +232,8 @@ label[for="player-name"] {
   box-shadow: inset 2px 2px #888;
 }
 
-.condition-input {
-  width: 250px;
-  margin: 5px;
-  font-size: 16px;
-  padding: 6px;
-  font-family: monospace;
-  border: 2px solid #000;
-  background-color: #fff6d1;
-  box-shadow: inset 2px 2px #888;
-}
 
-#conditions-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
 
-.conditions-label {
-  font-size: 1.5em;
-  font-family: 'Bungee', cursive;
-  background-color: rgba(255, 255, 0, 0.7);
-  padding: 4px 8px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 8px;
-}
 
 .add-button {
   font-family: 'Press Start 2P', cursive;
