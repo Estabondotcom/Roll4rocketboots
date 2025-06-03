@@ -15,6 +15,13 @@
       </div>
     </div>
   <form id="char-form">
+  <div style="margin-bottom: 10px;">
+    <button type="button" onclick="downloadCharacter()">💾 Save to File</button>
+    <label style="cursor:pointer;">
+      📂 Load from File
+      <input type="file" accept=".json" onchange="uploadCharacter(event)" style="display:none;" />
+    </label>
+  </div>
     <label>Character Name: <input type="text" id="char-name" maxlength="20" /></label><br><br>
 
     <div id="counters-section">
