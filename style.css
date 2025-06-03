@@ -257,3 +257,7 @@ label[for="player-name"] {
   box-shadow: inset 2px 2px #888;
   margin: 4px 0;
 }
+
+.section-title {
+  font-size: 1.95em;
+}
