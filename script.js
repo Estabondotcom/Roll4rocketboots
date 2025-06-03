@@ -93,7 +93,9 @@ function saveData() {
     if (input.value.trim() !== "") items.push(input.value.trim());
   });
 
-  const data = { name, skills, items };
+  const data = {name, skills, items,
+  conditions: Array.from(document.querySelectorAll('#conditions-container .input-wrapper')).map(wrapper => ({ name: wrapper.querySelector('.skill-input').value, levels: Array.from(wrapper.querySelectorAll('.skill-level')).map(cb => cb.checked) }))
+};
   localStorage.setItem('rfrbCharacter', JSON.stringify(data));
   alert('Character saved!');
 }
@@ -107,6 +109,7 @@ function loadData() {
   const skillContainer = document.getElementById('skills-container');
   skillContainer.innerHTML = '';
   data.skills.forEach(skill => addSkill(skill.name, skill.levels));
+if (data.conditions) data.conditions.forEach(condition => addCondition(condition.name, condition.levels));
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
@@ -169,7 +172,9 @@ function saveData() {
     if (input.value.trim() !== "") items.push(input.value.trim());
   });
 
-  const data = { name, exp, skills, items };
+  const data = {name, exp, skills, items,
+  conditions: Array.from(document.querySelectorAll('#conditions-container .input-wrapper')).map(wrapper => ({ name: wrapper.querySelector('.skill-input').value, levels: Array.from(wrapper.querySelectorAll('.skill-level')).map(cb => cb.checked) }))
+};
   localStorage.setItem('rfrbCharacter', JSON.stringify(data));
   alert('Character saved!');
 }
@@ -184,6 +189,7 @@ function loadData() {
   const skillContainer = document.getElementById('skills-container');
   skillContainer.innerHTML = '';
   data.skills.forEach(skill => addSkill(skill.name, skill.levels));
+if (data.conditions) data.conditions.forEach(condition => addCondition(condition.name, condition.levels));
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
@@ -239,7 +245,9 @@ function saveData() {
     if (input.value.trim() !== "") items.push(input.value.trim());
   });
 
-  const data = { name, exp, luck, skills, items };
+  const data = {name, exp, luck, skills, items,
+  conditions: Array.from(document.querySelectorAll('#conditions-container .input-wrapper')).map(wrapper => ({ name: wrapper.querySelector('.skill-input').value, levels: Array.from(wrapper.querySelectorAll('.skill-level')).map(cb => cb.checked) }))
+};
   localStorage.setItem('rfrbCharacter', JSON.stringify(data));
   alert('Character saved!');
 }
@@ -255,6 +263,7 @@ function loadData() {
   const skillContainer = document.getElementById('skills-container');
   skillContainer.innerHTML = '';
   data.skills.forEach(skill => addSkill(skill.name, skill.levels));
+if (data.conditions) data.conditions.forEach(condition => addCondition(condition.name, condition.levels));
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
@@ -311,7 +320,9 @@ function saveData() {
     if (input.value.trim() !== "") items.push(input.value.trim());
   });
 
-  const data = { name, exp, luck, wounds, skills, items };
+  const data = {name, exp, luck, wounds, skills, items,
+  conditions: Array.from(document.querySelectorAll('#conditions-container .input-wrapper')).map(wrapper => ({ name: wrapper.querySelector('.skill-input').value, levels: Array.from(wrapper.querySelectorAll('.skill-level')).map(cb => cb.checked) }))
+};
   localStorage.setItem('rfrbCharacter', JSON.stringify(data));
   alert('Character saved!');
 }
@@ -336,6 +347,7 @@ function loadData() {
   const skillContainer = document.getElementById('skills-container');
   skillContainer.innerHTML = '';
   data.skills.forEach(skill => addSkill(skill.name, skill.levels));
+if (data.conditions) data.conditions.forEach(condition => addCondition(condition.name, condition.levels));
 
   const itemContainer = document.getElementById('items-container');
   itemContainer.innerHTML = '';
@@ -397,7 +409,9 @@ function downloadCharacter() {
     if (input.value.trim() !== "") items.push(input.value.trim());
   });
 
-  const data = { name, exp, luck, wounds, skills, items };
+  const data = {name, exp, luck, wounds, skills, items,
+  conditions: Array.from(document.querySelectorAll('#conditions-container .input-wrapper')).map(wrapper => ({ name: wrapper.querySelector('.skill-input').value, levels: Array.from(wrapper.querySelectorAll('.skill-level')).map(cb => cb.checked) }))
+};
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -435,4 +449,34 @@ function uploadCharacter(event) {
     alert('Character loaded from file!');
   };
   reader.readAsText(file);
+}
+
+
+
+function addCondition(name = '', levels = [false, false, false]) {
+  const container = document.getElementById('conditions-container');
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'input-wrapper';
+
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'skill-input';
+  input.placeholder = 'New condition...';
+  input.value = name;
+  wrapper.appendChild(input);
+
+  const checkboxes = document.createElement('div');
+  checkboxes.className = 'skill-levels';
+
+  for (let i = 0; i < 3; i++) {
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'skill-level';
+    checkbox.checked = levels[i];
+    checkboxes.appendChild(checkbox);
+  }
+
+  wrapper.appendChild(checkboxes);
+  container.appendChild(wrapper);
 }
