@@ -298,35 +298,24 @@ label[for="player-name"] {
 
 
 /* Theme Backgrounds */
-body.theme-default #page-wrapper {
-  background-image: url('background/br1.png');
-  background-repeat: repeat;
-  background-size: initial;
-  background-position: top left;
-  color: #222;
-}
+body.theme-default 
 
-body.theme-sea #page-wrapper {
-  background-image: url('background/br2.png');
-  background-repeat: repeat;
-  background-size: initial;
-  background-position: top left;
-  color: #e0f7ff;
-}
+body.theme-sea 
 
-body.theme-dark #page-wrapper {
-  background-color: #1e1e1e;
-  color: #dddddd;
-}
+body.theme-dark 
 
 
 /* Filters */
-body.filter-grayscale #page-wrapper {
-  filter: grayscale(100%);
-}
-body.filter-sepia #page-wrapper {
-  filter: sepia(100%);
-}
-body.filter-invert #page-wrapper {
-  filter: invert(100%);
+body.filter-grayscale 
+body.filter-sepia 
+body.filter-invert 
+
+
+#page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
 }
