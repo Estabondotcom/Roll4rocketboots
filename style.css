@@ -217,3 +217,13 @@ label[for="player-name"] {
   width: 250px;
   box-shadow: inset 2px 2px #888;
 }
+
+.section-label {
+  font-size: 2em;
+  font-family: 'Bungee', cursive;
+  background-color: rgba(255, 255, 0, 0.7);
+  padding: 4px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 6px 0;
+}
