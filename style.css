@@ -208,15 +208,6 @@ label[for="player-name"] {
   margin-right: 10px;
 }
 
-#player-name {
-  font-family: monospace;
-  font-size: 16px;
-  padding: 6px;
-  border: 2px solid #000;
-  background-color: #fff6d1;
-  width: 250px;
-  box-shadow: inset 2px 2px #888;
-}
 
 .section-label {
   font-size: 2em;
@@ -228,12 +219,13 @@ label[for="player-name"] {
   margin: 6px 0;
 }
 
+
 #player-name {
   font-family: monospace;
   font-size: 30px;
   font-weight: bold;
-  padding: 5px;
-  height: 35px;
+  padding: 8px;
+  height: 38px;
   border: 2px solid #000;
   background-color: #fff6d1;
   width: 250px;
