@@ -2,11 +2,11 @@
 
 <html>
 <head>
-<title>Roll for Rocket Boots - Character Sheet</title>
+<title>Roll for Rocket Boots! - Character Sheet</title>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body><button id="rules-button" onclick="toggleRules()" style="position: absolute; top: 10px; left: 10px; z-index: 1000;" type="button">📖 Rules</button><div id="main-container">
-<div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots</h1></div>
+<div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots!</h1></div>
 <div class="modal" id="rules-modal">
 <div class="modal-content">
 <span class="close" onclick="toggleRules()">×</span>
@@ -20,7 +20,7 @@
 <button onclick="document.getElementById('fileInput').click()" type="button">📂 Load from File</button>
 <input accept=".json" id="fileInput" onchange="uploadCharacter(event)" style="display: none;" type="file"/>
 </div>
-<label>Character Name: <input id="char-name" maxlength="20" type="text"/></label><br/><br/>
+<label>Character Name: <input id="char-name" maxlength="30" type="text"/></label><br/><br/>
 <div id="counters-section">
 <div class="counter-block">
 <h2>Exp.</h2>
