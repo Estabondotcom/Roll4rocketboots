@@ -5,9 +5,8 @@
 <title>Roll for Rocket Boots - Character Sheet</title>
 <link href="style.css" rel="stylesheet"/>
 </head>
-<body><div id="main-container">
+<body><button id="rules-button" onclick="toggleRules()" style="position: absolute; top: 10px; left: 10px; z-index: 1000;" type="button">📖 Rules</button><div id="main-container">
 <div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots</h1></div>
-
 <div class="modal" id="rules-modal">
 <div class="modal-content">
 <span class="close" onclick="toggleRules()">×</span>
@@ -66,5 +65,5 @@
 <button onclick="clearData()" type="button">Clear</button>
 </form>
 <script src="script.js"></script>
-</div><div id="bottom-buttons" style="margin-top: 20px; text-align: center;"><button id="rules-button" onclick="toggleRules()" type="button">📖 Rules</button></div></body>
+</div><div id="bottom-buttons" style="margin-top: 20px; text-align: center;"></div></body>
 </html>
