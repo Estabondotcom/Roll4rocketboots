@@ -25,7 +25,7 @@ function createSkillInput(value = "", levels = [false, false, false, false]) {
   input.className = 'skill-input';
   input.placeholder = 'New skill...';
   input.value = value;
-  input.maxLength = 20;
+  input.maxLength = 50;
 
   const button = document.createElement('button');
   button.type = 'button';
@@ -49,7 +49,7 @@ function createItemInput(value = "") {
   input.className = 'item-input';
   input.placeholder = 'Item...';
   input.value = value;
-  input.maxLength = 20;
+  input.maxLength = 50;
 
   const button = document.createElement('button');
   button.type = 'button';
