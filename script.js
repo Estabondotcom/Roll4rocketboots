@@ -1,4 +1,4 @@
-function createSkillInput(value = "", levels = [false, false, false, false]) {
+function createSkillInput(value = "", levels = [true, false, false, false]) {
   const container = document.createElement('div');
   container.className = 'input-wrapper';
 
