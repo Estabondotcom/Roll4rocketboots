@@ -48,6 +48,7 @@
 </div>
 </div>
 </div><br/>
+
 <h2>Skills</h2>
 <div id="skills-section">
 <div id="skills-container"></div>
@@ -55,7 +56,13 @@
 <button onclick="addSkill()" type="button">+ New Skill</button>
 </div>
 </div><br/>
-<h2>Inventory</h2>
+
+    <div class="section">
+        <label for="conditions">Conditions</label>
+        <textarea id="conditions" name="conditions" rows="2" style="width: 100%;"></textarea>
+    </div>
+
+    <h2>Inventory</h2>
 <div id="items-section">
 <div id="items-container"></div>
 <div style="margin-top: 10px;">
@@ -91,24 +98,6 @@ function addCondition() {
   const div = document.createElement("div");
   div.className = "condition-entry";
   div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Enter condition">' +
-                  '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
-  container.appendChild(div);
-}
-</script><script>
-function addCondition() {
-  const container = document.getElementById("conditions-container");
-  const div = document.createElement("div");
-  div.className = "condition-entry";
-  div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Condition..." />' +
-                  '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
-  container.appendChild(div);
-}
-</script><script>
-function addCondition() {
-  const container = document.getElementById("conditions-container");
-  const div = document.createElement("div");
-  div.className = "condition-entry";
-  div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Condition..." />' +
                   '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
   container.appendChild(div);
 }
