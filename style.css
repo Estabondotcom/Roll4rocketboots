@@ -1,11 +1,159 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
-
 body {
-  background: url('background/br1.png') repeat;
-  font-family: 'Bungee', cursive;
-  color: #222;
+  font-family: Arial, sans-serif;
   padding: 20px;
-  margin: 0;
+  background-color: #f2f2f2;
 }
-/* ... [truncated for brevity, but full CSS already generated above] */
+
+textarea {
+  width: 100%;
+  font-family: monospace;
+}
+
+#skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-input, .item-input, #char-name {
+  width: 250px;
+  max-width: 100%;
+  padding: 6px;
+  font-family: monospace;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.skill-levels {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.level-label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.delete-button {
+  background-color: #c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 14px;
+  align-self: flex-start;
+}
+
+#exp-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#counters-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.counter-block h2 {
+  margin: 0 0 4px 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.counter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wounds {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.wounds button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.wounds button.active {
+  background-color: darkred;
+  color: white;
+}
+
+#rules-button {
+  font-size: 16px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+.close {
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
