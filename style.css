@@ -168,3 +168,15 @@ textarea {
   font-weight: bold;
   cursor: pointer;
 }
+
+h1 {
+  text-align: center;
+}
+
+#main-container {
+  background-color: rgba(144, 238, 144, 0.7); /* light green with 70% opacity */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}

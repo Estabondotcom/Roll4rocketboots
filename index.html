@@ -5,7 +5,7 @@
 <title>Roll for Rocket Boots - Character Sheet</title>
 <link href="style.css" rel="stylesheet"/>
 </head>
-<body>
+<body><div id="main-container">
 <h1>Roll for Rocket Boots</h1>
 <button id="rules-button" onclick="toggleRules()" type="button">📖 Rules</button>
 <div class="modal" id="rules-modal">
@@ -42,10 +42,10 @@
 <div class="counter-block">
 <h2>Wounds</h2>
 <div class="wounds">
-<button onclick="toggleWound(0)" type="button"></button>
-<button onclick="toggleWound(1)" type="button"></button>
-<button onclick="toggleWound(2)" type="button"></button>
-<button onclick="toggleWound(3)" type="button"></button>
+<button onclick="toggleWound(0)" type="button">X</button>
+<button onclick="toggleWound(1)" type="button">X</button>
+<button onclick="toggleWound(2)" type="button">X</button>
+<button onclick="toggleWound(3)" type="button">X</button>
 </div>
 </div>
 </div><br/>
@@ -66,5 +66,5 @@
 <button onclick="clearData()" type="button">Clear</button>
 </form>
 <script src="script.js"></script>
-</body>
+</div></body>
 </html>
