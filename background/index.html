@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Roll for Rocket Boots! - Character Sheet</title>
+<link href="style.css" rel="stylesheet"/>
+
+<style>
+body.filter-grayscale {
+  filter: grayscale(100%);
+}
+body.filter-sepia {
+  filter: sepia(100%);
+}
+body.filter-invert {
+  filter: invert(100%);
+}
+
+#filter-buttons {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  display: flex;
+  gap: 5px;
+}
+
+.filter-button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.filter-button:hover {
+  opacity: 1;
+}
+
+.filter-button:nth-child(1) {
+  background-color: #aaa;
+}
+.filter-button:nth-child(2) {
+  background-color: #a67c52;
+}
+.filter-button:nth-child(3) {
+  background: linear-gradient(45deg, black 50%, white 50%);
+  border: 1px solid #333;
+}
+
+.filter-button.selected {
+  outline: 2px solid #222;
+  box-shadow: inset 0 0 4px #00000088;
+  opacity: 1 !important;
+}
+</style>
+
+</head>
+<body><button id="rules-button" onclick="toggleRules()" style="position: absolute; top: 10px; left: 10px; z-index: 1000;" type="button">📖 Rules</button><div id="main-container">
+<div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots!</h1></div>
+<div class="modal" id="rules-modal">
+<div class="modal-content">
+<span class="close" onclick="toggleRules()">×</span>
+<img alt="Rule Page 1" src="rules/1.png"/>
+<img alt="Rule Page 2" src="rules/2.png"/>
+</div>
+</div>
+<form id="char-form">
+<div style="margin-bottom: 10px;">
+<button onclick="downloadCharacter()" type="button">💾 Save</button>
+<button onclick="document.getElementById('fileInput').click()" type="button">📂 Load</button><div style="margin-top: 10px;"><div class="section-label">NAME</div><input id="player-name" placeholder="Enter your name" type="text"/></div>
+<input accept=".json" id="fileInput" onchange="uploadCharacter(event)" style="display: none;" type="file"/>
+</div>
+<br/><br/>
+<div id="counters-section">
+<div class="counter-block">
+<h2>Exp.</h2>
+<div class="counter">
+<button onclick="adjustExp(-1)" type="button">⬇</button>
+<span id="exp-value">0</span>
+<button onclick="adjustExp(1)" type="button">⬆</button>
+</div>
+</div>
+<div class="counter-block">
+<h2>Luck</h2>
+<div class="counter">
+<button onclick="adjustLuck(-1)" type="button">⬇</button>
+<span id="luck-value">1</span>
+<button onclick="adjustLuck(1)" type="button">⬆</button>
+</div>
+</div>
+<div class="counter-block">
+<div class="wounds-section">
+<h2>Wounds</h2>
+<div class="wounds">
+<button onclick="toggleWound(0)" type="button"></button>
+<button onclick="toggleWound(1)" type="button"></button>
+<button onclick="toggleWound(2)" type="button"></button>
+<button onclick="toggleWound(3)" type="button"></button>
+</div>
+</div>
+</div>
+</div><br/>
+
+<h2 class="section-title skills-title">Skills</h2>
+<div id="skills-section">
+<div id="skills-container"></div>
+<div style="margin-top: 10px;">
+<button onclick="addSkill()" type="button">+ New Skill</button>
+</div>
+</div>
+
+<h2 class="section-title">Conditions</h2>
+<div id="conditions-section">
+  <div id="conditions-container"></div>
+  <div style="margin-top: 10px;">
+    <button onclick="addCondition()" type="button">+ New Condition</button>
+  </div>
+</div>
+<br/>
+
+    
+
+    <h2 class="section-title">Inventory</h2>
+<div id="items-section">
+<div id="items-container"></div>
+<div style="margin-top: 10px;">
+<button onclick="addItem()" type="button">+ Add Item</button>
+</div>
+</div><br/>
+<button onclick="clearData()" type="button">Clear</button>
+</form>
+<script src="script.js"></script>
+</div><div id="bottom-buttons" style="margin-top: 20px; text-align: center;"></div><script>
+function downloadCharacter() {
+  const characterData = {
+    name: document.getElementById("player-name")?.value || "",
+    exp: document.getElementById("exp-value")?.textContent || 0,
+    luck: document.getElementById("luck-value")?.textContent || 1,
+    skills: Array.from(document.querySelectorAll('.skill-input')).map(input => input.value),
+    items: Array.from(document.querySelectorAll('.item-input')).map(input => input.value)
+  };
+
+  const blob = new Blob([JSON.stringify(characterData, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "character.json";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+</script><script>
+function addCondition() {
+  const container = document.getElementById("conditions-container");
+  const div = document.createElement("div");
+  div.className = "condition-entry";
+  div.innerHTML = '<input type="text" class="condition-input" maxlength="20" placeholder="Enter condition">' +
+                  '<button class="delete-button" onclick="this.parentElement.remove()">❌</button>';
+  container.appendChild(div);
+}
+</script>
+<div id="filter-buttons">
+  <button class="filter-button" onclick="applyFilter('grayscale')"></button>
+  <button class="filter-button" onclick="applyFilter('sepia')"></button>
+  <button class="filter-button" onclick="applyFilter('invert')"></button>
+</div>
+
+<script>
+function applyFilter(type) {
+  const body = document.body;
+  const buttons = document.querySelectorAll('.filter-button');
+
+  body.classList.remove('filter-grayscale', 'filter-sepia', 'filter-invert');
+  buttons.forEach(btn => btn.classList.remove('selected'));
+
+  const filterClass = `filter-${type}`;
+  if (!body.classList.contains(filterClass)) {
+    body.classList.add(filterClass);
+    const index = ['grayscale', 'sepia', 'invert'].indexOf(type);
+    if (index !== -1) buttons[index].classList.add('selected');
+  }
+}
+</script>
+
+</body>
+</html>
