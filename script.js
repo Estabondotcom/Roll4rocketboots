@@ -497,6 +497,7 @@ function setTheme(theme) {
   switch (theme) {
     case 'default':
       body.setAttribute("data-theme", "default");
+      body.style.backgroundImage = "url('background/br1.png')";
       break;
     case 'sea':
       body.setAttribute("data-theme", "default");

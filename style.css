@@ -395,3 +395,20 @@ body[data-theme="dark"] .title-wrapper h1 {
 body[data-theme="default"] {
   background-image: url('background/br1.png');
 }
+
+/* Apply muted blue to all h2 elements in dark mode */
+body[data-theme="dark"] h2,
+body[data-theme="dark"] .section-label {
+  background-color: #336699 !important;
+  color: #ffffff !important;
+}
+
+/* Force override the inline background in the title wrapper */
+body[data-theme="dark"] .title-wrapper {
+  background-color: rgba(48, 30, 80, 0.7) !important;
+}
+
+/* Ensure h1 remains purple */
+body[data-theme="dark"] .title-wrapper h1 {
+  color: #a974c2 !important;
+}
