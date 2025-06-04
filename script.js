@@ -488,3 +488,22 @@ function addCondition(name = '', levels = [false, false, false]) {
 
   container.appendChild(wrapper);
 }
+
+
+function setTheme(theme) {
+  const body = document.body;
+  body.removeAttribute("data-theme");
+
+  switch (theme) {
+    case 'default':
+      body.style.backgroundImage = 'none';
+      break;
+    case 'sea':
+      body.style.backgroundImage = "url('background/br1.png')";
+      break;
+    case 'dark':
+      body.setAttribute("data-theme", "dark");
+      body.style.backgroundImage = 'none';
+      break;
+  }
+}

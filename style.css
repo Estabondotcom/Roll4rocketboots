@@ -295,3 +295,49 @@ label[for="player-name"] {
   grid-column: 1 / -1;
   margin: 0;
 }
+
+/* Dark Theme - Charcoal background, muted orange buttons, black fields, white text */
+
+body[data-theme="dark"] {
+  background-color: #2a2a2a; /* charcoal */
+  color: #ffffff;
+  background-image: none;
+}
+
+/* Buttons */
+body[data-theme="dark"] button {
+  background-color: #cc7744; /* muted orange */
+  color: #ffffff;
+  border: none;
+}
+
+/* Form elements */
+body[data-theme="dark"] input,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] select {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+/* Highlights */
+body[data-theme="dark"] .highlight {
+  background-color: #336699; /* muted blue */
+  color: #ffffff;
+}
+
+/* Opacity Box */
+body[data-theme="dark"] .overlay-box {
+  background-color: rgba(0, 0, 80, 0.7); /* 70% opacity dark blue */
+}
+
+/* Title */
+body[data-theme="dark"] h1 {
+  color: #a974c2; /* muted purple */
+}
+
+/* Title box (assumed class) */
+body[data-theme="dark"] .title-box {
+  background-color: #1e3d1e; /* dark green */
+  border: none;
+}
