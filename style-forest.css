@@ -187,7 +187,7 @@ textarea {
 
 /* Main content box styling */
 #main-container {
-  background-color: rgba(39, 28, 61, 0.8);
+  background-color: rgba(161, 109, 53, 0.7);
   padding: 20px;
   border-radius: 12px;
   max-width: 900px;
@@ -205,7 +205,7 @@ label, h2 {
 /* Special styling for player name label */
 label[for="player-name"] {
   font-size: 1.5em;
-  background-color: rgba(57, 94, 51, 0.7);
+  background-color: rgba(51, 94, 53, 0.7);
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
