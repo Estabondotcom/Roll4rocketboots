@@ -341,3 +341,17 @@ body[data-theme="dark"] .title-box {
   background-color: #1e3d1e; /* dark green */
   border: none;
 }
+
+/* Fixes for dark theme colors */
+body[data-theme="dark"] .highlight,
+body[data-theme="dark"] .section-title,
+body[data-theme="dark"] .label {
+  background-color: #336699; /* muted blue */
+  color: #ffffff;
+}
+
+/* Fix title box with correct opacity */
+body[data-theme="dark"] .title-box {
+  background-color: rgba(0, 0, 80, 0.7); /* 70% opacity dark blue */
+  border: none;
+}
