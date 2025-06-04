@@ -417,17 +417,7 @@ body[data-theme="dark"] .title-wrapper {
 
 /* Title text */
 body[data-theme="dark"] .title-wrapper h1 {
-  color: #a974c2 !important;
-}
-
-/* Blue box behind title text */
-body[data-theme="dark"] .title-wrapper h1::before {
-  background-color: #1e3d1e !important; /* dark green */
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
+  color: #a974c2 !
 
 /* Prevent layout border artifacts */
 body[data-theme="dark"] .title-wrapper * {
