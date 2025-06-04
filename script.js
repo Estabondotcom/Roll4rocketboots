@@ -488,33 +488,3 @@ function addCondition(name = '', levels = [false, false, false]) {
 
   container.appendChild(wrapper);
 }
-
-
-function setTheme(theme) {
-  const root = document.documentElement;
-  const body = document.body;
-
-  body.classList.remove('dark-mode');
-
-  switch (theme) {
-    case 'default':
-      root.style.setProperty('--bg-color', 'white');
-      root.style.setProperty('--text-color', 'black');
-      root.style.setProperty('--accent-color', '#e91e63');
-      body.style.backgroundImage = 'none';
-      break;
-    case 'sea':
-      root.style.setProperty('--bg-color', '#e0f7fa');
-      root.style.setProperty('--text-color', '#004d40');
-      root.style.setProperty('--accent-color', '#00796b');
-      body.style.backgroundImage = "url('background/br1.png')";
-      break;
-    case 'dark':
-      root.style.setProperty('--bg-color', '#121212');
-      root.style.setProperty('--text-color', '#e0e0e0');
-      root.style.setProperty('--accent-color', '#bb86fc');
-      body.classList.add('dark-mode');
-      body.style.backgroundImage = 'none';
-      break;
-  }
-}
