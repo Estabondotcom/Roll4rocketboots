@@ -355,3 +355,21 @@ body[data-theme="dark"] .title-box {
   background-color: rgba(0, 0, 80, 0.7); /* 70% opacity dark blue */
   border: none;
 }
+
+/* Broaden selector to catch all green highlight boxes in dark mode */
+body[data-theme="dark"] .highlight,
+body[data-theme="dark"] .label,
+body[data-theme="dark"] .section-title,
+body[data-theme="dark"] .title-label,
+body[data-theme="dark"] .stat-label {
+  background-color: #336699; /* muted blue */
+  color: #ffffff;
+}
+
+/* Adjust the large green box background */
+body[data-theme="dark"] .overlay-box,
+body[data-theme="dark"] .title-box,
+body[data-theme="dark"] .title-area {
+  background-color: rgba(48, 30, 80, 0.7); /* dark burple at 70% opacity */
+  border: none;
+}
