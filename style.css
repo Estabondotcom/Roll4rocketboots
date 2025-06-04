@@ -396,19 +396,40 @@ body[data-theme="default"] {
   background-image: url('background/br1.png');
 }
 
-/* Apply muted blue to all h2 elements in dark mode */
+/* Fully overwrite label highlights like EXP, LUCK, etc. */
 body[data-theme="dark"] h2,
 body[data-theme="dark"] .section-label {
   background-color: #336699 !important;
   color: #ffffff !important;
 }
 
-/* Force override the inline background in the title wrapper */
-body[data-theme="dark"] .title-wrapper {
-  background-color: rgba(48, 30, 80, 0.7) !important;
+/* Dice/checkbox labels */
+body[data-theme="dark"] .level-label {
+  background-color: #336699 !important;
+  color: #ffffff !important;
 }
 
-/* Ensure h1 remains purple */
+/* Semi-opaque background area */
+body[data-theme="dark"] .title-wrapper {
+  background-color: rgba(0, 0, 80, 0.7) !important;
+  border: none !important;
+}
+
+/* Title text */
 body[data-theme="dark"] .title-wrapper h1 {
   color: #a974c2 !important;
+}
+
+/* Blue box behind title text */
+body[data-theme="dark"] .title-wrapper h1::before {
+  background-color: #1e3d1e !important; /* dark green */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+/* Prevent layout border artifacts */
+body[data-theme="dark"] .title-wrapper * {
+  border: none !important;
 }
