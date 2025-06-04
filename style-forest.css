@@ -196,7 +196,7 @@ textarea {
 
 /* Label and section header background styling */
 label, h2 {
-  background-color: rgba(145, 95, 57, 0.7);
+  background-color: rgba(56, 38, 24, 0.7);
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
@@ -205,7 +205,7 @@ label, h2 {
 /* Special styling for player name label */
 label[for="player-name"] {
   font-size: 1.5em;
-  background-color: rgba(51, 94, 53, 0.7);
+  background-color: rgba(56, 38, 24, .08)
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
@@ -217,7 +217,7 @@ label[for="player-name"] {
 .section-label {
   font-size: 2em;
   font-family: 'Bungee', cursive;
-  background-color: rgba(51, 94, 53, 0.7);
+  background-color: rgba(56, 38, 24, 0.7);
   padding: 4px 12px;
   border-radius: 6px;
   display: inline-block;
