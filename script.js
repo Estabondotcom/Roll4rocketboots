@@ -494,16 +494,6 @@ function setTheme(theme) {
   const link = document.querySelector('link[rel="stylesheet"]');
   if (theme === 'dark') {
     link.href = 'style-dark.css';
-  } else {
-    link.href = 'style-default.css';
-  }
-}
-
-
-function setTheme(theme) {
-  const link = document.querySelector('link[rel="stylesheet"]');
-  if (theme === 'dark') {
-    link.href = 'style-dark.css';
   } else if (theme === 'forest') {
     link.href = 'style-forest.css';
   } else {
