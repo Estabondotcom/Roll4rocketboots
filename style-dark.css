@@ -1,54 +1,58 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
 
+/* Page background and base font styling */
 body {
-  background: url('background/br1.png') repeat;
+  background-color: #2c2c2c;
   font-family: 'Bungee', cursive;
-  color: #222;
+  color: #eee;
   padding: 20px;
   margin: 0;
 }
 
+/* Page title header styling */
 h1 {
   text-align: center;
   display: inline-block;
   padding: 10px 15px;
-  background-color: #00e5ff;
+  background-color: #003D66;
   box-shadow: 4px 4px #000;
   padding: 10px;
   border-radius: 0;
   font-size: 3.1em;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  color: #ff00ff;
+  color: #66003d;
   text-shadow: 2px 2px 0 #000;
   margin-bottom: 20px;
 }
 
+/* Button default styling */
 button {
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
   padding: 10px 14px;
   margin: 5px;
   border: 3px solid #000;
-  background-color: #00e5ff;
-  color: #000;
+  background-color: #c47600;
+  color: #fff;
   box-shadow: 3px 3px #000;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
+/* Button hover effect */
 button:hover {
-  background-color: #ff00ff;
+  background-color: #130c00;
   color: #fff;
   transform: scale(1.05);
 }
 
+/* Text input and textarea styling */
 input[type="text"], textarea {
   font-family: monospace;
   font-size: 16px;
   padding: 6px;
   border: 2px solid #000;
-  background-color: #fff6d1;
+  background-color: #c2c2c2;
   width: 250px;
   margin-bottom: 8px;
   box-shadow: inset 2px 2px #888;
@@ -80,12 +84,13 @@ textarea {
 }
 
 .skill-level {
-  accent-color: #ff00ff;
+  accent-color: #66003d;
 }
 
+/* Styling for delete buttons */
 .delete-button {
   margin-top: 4px;
-  background-color: #ff0000;
+  background-color: #760000;
   color: white;
   font-size: 14px;
   border: none;
@@ -120,17 +125,19 @@ textarea {
   margin-top: 4px;
 }
 
+/* Wound circle button styling */
 .wounds button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: #4d4d4d;
   color: #000;
   font-weight: bold;
   border: 2px solid #000;
   cursor: pointer;
 }
 
+/* Active wound button (damaged) styling */
 .wounds button.active {
   background-color: darkred;
   color: white;
@@ -138,8 +145,8 @@ textarea {
 
 #rules-button {
   margin-bottom: 10px;
-  background-color: #fff;
-  color: #000;
+  background-color: #4d4d4d;
+  color: #d9d9d9;
   font-size: 14px;
   padding: 6px 10px;
 }
@@ -177,30 +184,27 @@ textarea {
   cursor: pointer;
 }
 
+/* Main content box styling */
 #main-container {
-  background-color: rgba(144, 238, 144, 0.7);
+  background-color: rgba(39, 28, 61, 0.7);
   padding: 20px;
   border-radius: 12px;
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* Label and section header background styling */
 label, h2 {
-  background-color: rgba(255, 255, 0, 0.7);
+  background-color: rgba(0, 61, 102, 0.7);
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
 }
 
-  font-size: 1.5em;
-  background-color: rgba(255, 255, 0, 0.7);
-  padding: 4px 8px;
-  border-radius: 6px;
-  display: inline-block;
-}
+/* Special styling for player name label */
 label[for="player-name"] {
   font-size: 1.5em;
-  background-color: rgba(255, 255, 0, 0.7);
+  background-color: rgba(0, 61, 102, 0.7);
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
@@ -208,18 +212,18 @@ label[for="player-name"] {
   margin-right: 10px;
 }
 
-
+/* Section title banner styling */
 .section-label {
   font-size: 2em;
   font-family: 'Bungee', cursive;
-  background-color: rgba(255, 255, 0, 0.7);
+  background-color: rgba(0, 61, 102, 0.7);
   padding: 4px 12px;
   border-radius: 6px;
   display: inline-block;
   margin: 6px 0;
 }
 
-
+/* Player name input field styling */
 #player-name {
   font-family: monospace;
   font-size: 30px;
@@ -227,33 +231,33 @@ label[for="player-name"] {
   padding: 8px;
   height: 38px;
   border: 2px solid #000;
-  background-color: #fff6d1;
+  background-color: #c2c2c2;
   width: 300px;
   box-shadow: inset 2px 2px #888;
 }
 
-
-
-
+/* Additional button styling (duplicate of base button) */
 .add-button {
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
   padding: 10px 14px;
   margin: 5px;
   border: 3px solid #000;
-  background-color: #00e5ff;
-  color: #000;
+  background-color: #c47600;
+  color: #fff;
   box-shadow: 3px 3px #000;
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
+/* Input field for conditions */
 .condition-input {
   width: 250px;
   font-size: 16px;
   padding: 6px;
   font-family: monospace;
   border: 2px solid #000;
-  background-color: #fff6d1;
+  background-color: #c2c2c2;
   box-shadow: inset 2px 2px #888;
   margin: 4px 0;
 }
@@ -281,6 +285,7 @@ label[for="player-name"] {
   justify-items: center;
 }
 
+/* EXP and Luck label styling */
 .exp-label, .luck-label {
   grid-column: 2 / 3;
   font-weight: bold;

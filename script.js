@@ -491,20 +491,10 @@ function addCondition(name = '', levels = [false, false, false]) {
 
 
 function setTheme(theme) {
-  const body = document.body;
-  body.removeAttribute("data-theme");
-
-  switch (theme) {
-    case 'default':
-      body.setAttribute("data-theme", "default");
-      break;
-    case 'sea':
-      body.setAttribute("data-theme", "default");
-      body.style.backgroundImage = "url('background/br1.png')";
-      break;
-    case 'dark':
-      body.setAttribute("data-theme", "dark");
-      body.style.backgroundImage = 'none';
-      break;
+  const link = document.querySelector('link[rel="stylesheet"]');
+  if (theme === 'dark') {
+    link.href = 'style-dark.css';
+  } else {
+    link.href = 'style-default.css';
   }
 }
