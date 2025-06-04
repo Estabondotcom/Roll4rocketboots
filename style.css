@@ -373,3 +373,25 @@ body[data-theme="dark"] .title-area {
   background-color: rgba(48, 30, 80, 0.7); /* dark burple at 70% opacity */
   border: none;
 }
+
+/* Fix highlight labels and headers */
+body[data-theme="dark"] .section-label,
+body[data-theme="dark"] h2.section-title {
+  background-color: #336699; /* muted blue */
+  color: #ffffff;
+}
+
+/* Fix the title container */
+body[data-theme="dark"] .title-wrapper {
+  background-color: rgba(48, 30, 80, 0.7); /* dark burple with 70% opacity */
+}
+
+/* Make sure the title text is purple */
+body[data-theme="dark"] .title-wrapper h1 {
+  color: #a974c2; /* muted purple */
+}
+
+/* Restore background image for default */
+body[data-theme="default"] {
+  background-image: url('background/br1.png');
+}
