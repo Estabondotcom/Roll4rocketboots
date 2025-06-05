@@ -28,7 +28,8 @@ button {
   margin: 5px;
   border: 3px solid #000;
   background: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee);
-  color: #000;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
   box-shadow: 4px 4px #000;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -126,6 +127,7 @@ textarea {
   font-weight: bold;
   border: 2px solid #000;
   cursor: pointer;
+  text-shadow: none;
 }
 
 .wounds button.active {
@@ -228,7 +230,8 @@ label[for="player-name"] {
   margin: 5px;
   border: 3px solid #000;
   background: linear-gradient(to right, #ff69b4, #ffcc00);
-  color: #000;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
   box-shadow: 3px 3px #000;
   cursor: pointer;
   transition: all 0.2s ease;
