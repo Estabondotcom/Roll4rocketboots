@@ -18,9 +18,9 @@ h1 {
   padding: 10px;
   border-radius: 0;
   font-size: 3.1em;
-  text-shadow: -1px -1px 0 #152733, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -2px -2px 0 #151936, 2px -2px 0 #151936, -2px 2px 0 #151936, 2px 2px 0 #151936;
   color: #559e7a;
-  text-shadow: 2px 2px 0 #32662c;
+  text-shadow: 4px 4px 0 #32662c;
   margin-bottom: 20px;
 }
 
