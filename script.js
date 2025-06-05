@@ -496,6 +496,8 @@ function setTheme(theme) {
     link.href = 'style-dark.css';
   } else if (theme === 'forest') {
     link.href = 'style-forest.css';
+  } else if (theme === 'ocean') {
+    link.href = 'style-ocean.css';
   } else {
     link.href = 'style-default.css';
   }
