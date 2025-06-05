@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap');
 
 body {
-  background: url('background/br3.PNG') repeat;
+  background: url('background/rainbow-bg.png') repeat; /* Replace with your actual image */
   font-family: 'Bungee', cursive;
-  color: #9efaff;
+  color: #ffffff;
   padding: 20px;
   margin: 0;
 }
@@ -21,22 +21,20 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Rainbow button style with black text outline */
-.rainbow-button {
+button {
   font-family: 'Press Start 2P', cursive;
   font-size: 12px;
   padding: 10px 14px;
   margin: 5px;
   border: 3px solid #000;
   background: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee);
-  color: #fff;
+  color: #000;
   box-shadow: 4px 4px #000;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
-.rainbow-button:hover {
+button:hover {
   background-color: #fff;
   color: #000;
   transform: scale(1.05);
@@ -128,7 +126,6 @@ textarea {
   font-weight: bold;
   border: 2px solid #000;
   cursor: pointer;
-  text-shadow: none;
 }
 
 .wounds button.active {
@@ -225,7 +222,16 @@ label[for="player-name"] {
 }
 
 .add-button {
-  composes: rainbow-button;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  padding: 10px 14px;
+  margin: 5px;
+  border: 3px solid #000;
+  background: linear-gradient(to right, #ff69b4, #ffcc00);
+  color: #000;
+  box-shadow: 3px 3px #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .condition-input {
