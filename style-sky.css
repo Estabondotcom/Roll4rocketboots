@@ -4,7 +4,7 @@
 body {
   background: url('background/br3.PNG') repeat; /* Replace with your actual image */
   font-family: 'Bungee', cursive;
-  color: #9fb4d6;
+  color: #9efaff;
   padding: 20px;
   margin: 0;
 }
@@ -28,7 +28,7 @@ button {
   margin: 5px;
   border: 3px solid #000;
   background: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee);
-  color: #000;
+  color: #fff;
   box-shadow: 4px 4px #000;
   cursor: pointer;
   transition: all 0.2s ease;
