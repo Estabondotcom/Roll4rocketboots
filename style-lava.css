@@ -4,7 +4,7 @@
 body {
   background: url('background/br6.PNG') repeat;
   font-family: 'Bungee', cursive;
-  color: #80bd99;
+  color: #783C24;
   padding: 20px;
   margin: 0;
 }
@@ -194,7 +194,7 @@ label, h2 {
 
 label[for="player-name"] {
   font-size: 1.5em;
-  background-color: rgba(32, 98, 79, 0.7);
+  background-color: rgba(98, 79, 63, 1);
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-block;
@@ -206,7 +206,7 @@ label[for="player-name"] {
 .section-label {
   font-size: 2em;
   font-family: 'Bungee', cursive;
-  background-color: rgba(241, 223, 43, 0.7);
+  background-color: rgba(98, 79, 63, 1);
   padding: 4px 12px;
   border-radius: 6px;
   display: inline-block;
