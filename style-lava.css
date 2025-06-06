@@ -18,7 +18,7 @@ h1 {
   padding: 10px;
   border-radius: 0;
   font-size: 3.1em;
-  text-shadow: -2px -2px 0 #DAA229, 2px -2px 0 #DAA229, -2px 2px 0 #DAA229, 2px 2px 0 #DAA229;
+  text-shadow: -1px -1px 0 #DAA229, 1px -1px 0 #DAA229, -1px 1px 0 #DAA229, 1px 1px 0 #DAA229;
   color: #783C24;
   text-shadow: 7px  7px 0 #DAA229;
   margin-bottom: 20px;
