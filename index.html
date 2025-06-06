@@ -38,6 +38,59 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<script>
+// Cookie helpers
+function setCookie(name, value, days = 30) {
+  const expires = new Date(Date.now() + days*864e5).toUTCString();
+  document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+}
+function getCookie(name) {
+  return document.cookie.split('; ').reduce((r, v) => {
+    const parts = v.split('=');
+    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+  }, '');
+}
+
+// Restore theme and form fields
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = getCookie('selectedTheme');
+  if (savedTheme) {
+    document.getElementById('themeStylesheet').setAttribute('href', savedTheme);
+  }
+
+  const allInputs = document.querySelectorAll('input, textarea, select');
+  allInputs.forEach(input => {
+    const name = input.name || input.id;
+    if (!name) return;
+
+    const saved = getCookie('field_' + name);
+
+    // Restore value or state
+    if (input.type === 'checkbox' || input.type === 'radio') {
+      input.checked = saved === 'true';
+    } else if (saved !== undefined) {
+      input.value = saved;
+    }
+
+    // Save changes
+    input.addEventListener('input', () => {
+      if (input.type === 'checkbox' || input.type === 'radio') {
+        setCookie('field_' + name, input.checked);
+      } else {
+        setCookie('field_' + name, input.value);
+      }
+    });
+
+    if (input.type === 'checkbox' || input.type === 'radio') {
+      input.addEventListener('change', () => {
+        setCookie('field_' + name, input.checked);
+      });
+    }
+  });
+});
+</script>
+
 </head>
 <body>
 
