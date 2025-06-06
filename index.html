@@ -4,6 +4,40 @@
 <head>
 <title>Roll for Rocket Boots! - Character Sheet</title>
 <link href="style-default.css" rel="stylesheet"/>
+
+<script>
+// Cookie helpers
+function setCookie(name, value, days = 30) {
+  const expires = new Date(Date.now() + days*864e5).toUTCString();
+  document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+}
+function getCookie(name) {
+  return document.cookie.split('; ').reduce((r, v) => {
+    const parts = v.split('=');
+    return parts[0] === name ? decodeURIComponent(parts[1]) : r
+  }, '');
+}
+
+// Restore theme and field values
+window.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = getCookie('selectedTheme');
+  if (savedTheme) {
+    document.getElementById('themeStylesheet').setAttribute('href', savedTheme);
+  }
+
+  const fields = document.querySelectorAll('input[type="text"], textarea');
+  fields.forEach(field => {
+    const name = field.name || field.id;
+    if (!name) return;
+    const saved = getCookie('field_' + name);
+    if (saved) field.value = saved;
+    field.addEventListener('input', () => {
+      setCookie('field_' + name, field.value);
+    });
+  });
+});
+</script>
+
 </head>
 <body>
 
