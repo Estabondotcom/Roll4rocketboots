@@ -223,7 +223,7 @@ label[for="player-name"] {
   border: 2px solid #000;
   background-color: #624F3F;
   width: 300px;
-  box-shadow: inset 2px 2px #DBA14C;
+  box-shadow: inset 2px 2px #ccc;
 }
 
 
