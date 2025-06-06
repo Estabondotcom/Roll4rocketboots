@@ -506,3 +506,58 @@ function setTheme(theme) {
     link.href = 'style-default.css';
   }
 }
+
+
+
+// === AUTOSAVE FEATURE ===
+function saveField(key, value) {
+    localStorage.setItem(key, value);
+}
+
+function loadField(key, element) {
+    const saved = localStorage.getItem(key);
+    if (saved !== null) {
+        if (element.type === "checkbox") {
+            element.checked = saved === "true";
+        } else {
+            element.value = saved;
+        }
+    }
+}
+
+// Apply saved theme
+window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("selectedTheme");
+    if (savedTheme) {
+        const link = document.getElementById("themeStylesheet");
+        if (link) {
+            link.href = savedTheme;
+        }
+    }
+
+    // Restore all inputs, textareas, selects, and checkboxes
+    const allFields = document.querySelectorAll("input, textarea, select");
+    allFields.forEach(el => {
+        if (el.name || el.id) {
+            const key = "field_" + (el.name || el.id);
+            loadField(key, el);
+            el.addEventListener("input", () => saveField(key, el.value));
+            el.addEventListener("change", () => {
+                if (el.type === "checkbox") {
+                    saveField(key, el.checked);
+                } else {
+                    saveField(key, el.value);
+                }
+            });
+        }
+    });
+});
+
+// Theme button support
+function switchTheme(file) {
+    const link = document.getElementById("themeStylesheet");
+    if (link) {
+        link.href = file;
+        localStorage.setItem("selectedTheme", file);
+    }
+}
