@@ -3,77 +3,22 @@
 <html>
 <head>
 <title>Roll for Rocket Boots! - Character Sheet</title>
-<link href="style-default.css" id="themeStylesheet" rel="stylesheet"/>
-<script>
-// Restore theme and form fields from localStorage
-function applyAutosaveToElement(input) {
-  const name = input.name || input.id;
-  if (!name) return;
-  const saved = localStorage.getItem('field_' + name);
-  if (input.type === 'checkbox' || input.type === 'radio') {
-    input.checked = saved === 'true';
-  } else if (saved !== null) {
-    input.value = saved;
-  }
-  input.addEventListener('input', () => {
-    if (input.type === 'checkbox' || input.type === 'radio') {
-      localStorage.setItem('field_' + name, input.checked);
-    } else {
-      localStorage.setItem('field_' + name, input.value);
-    }
-  });
-  if (input.type === 'checkbox' || input.type === 'radio') {
-    input.addEventListener('change', () => {
-      localStorage.setItem('field_' + name, input.checked);
-    });
-  }
-}
-
-function applyAutosaveToAll() {
-  const inputs = document.querySelectorAll('input, textarea, select');
-  inputs.forEach(applyAutosaveToElement);
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('selectedTheme');
-  if (savedTheme) {
-    const themeLink = document.getElementById('themeStylesheet');
-    if (themeLink) themeLink.setAttribute('href', savedTheme);
-  }
-
-  applyAutosaveToAll();
-
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach(mutation => {
-      mutation.addedNodes.forEach(node => {
-        if (node.tagName && ['INPUT', 'TEXTAREA', 'SELECT'].includes(node.tagName)) {
-          applyAutosaveToElement(node);
-        } else if (node.querySelectorAll) {
-          node.querySelectorAll('input, textarea, select').forEach(applyAutosaveToElement);
-        }
-      });
-    });
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-});
-
-// Hook into theme switcher
-function switchTheme(cssFile) {
-  localStorage.setItem('selectedTheme', cssFile);
-  document.getElementById('themeStylesheet').setAttribute('href', cssFile);
-}
-</script>
+<link href="style-default.css" rel="stylesheet"/>
 </head>
 <body>
+
 <div id="theme-toggle" style="position: absolute; top: 10px; right: 10px; z-index: 1000;">
-<button onclick="setTheme('default')">🏠</button>
-<button onclick="setTheme('dark')">🌙</button>
-<button onclick="setTheme('forest')">🌲</button>
-<button onclick="setTheme('ocean')">🌊</button>
-<button onclick="setTheme('sky')">🌈</button>
-<button onclick="setTheme('lava')">🌋</button>
+  <button onclick="setTheme('default')">🏠</button>
+  <button onclick="setTheme('dark')">🌙</button>
+  <button onclick="setTheme('forest')">🌲</button>
+  <button onclick="setTheme('ocean')">🌊</button>
+  <button onclick="setTheme('sky')">🌈</button>
+  <button onclick="setTheme('lava')">🌋</button>
 </div>
+
+
+
+
 <button id="rules-button" onclick="toggleRules()" style="position: absolute; top: 10px; left: 10px; z-index: 1000;" type="button">📖 Rules</button><div id="main-container">
 <div class="title-wrapper" style="text-align:center;"><h1>Roll for Rocket Boots!</h1></div>
 <div class="modal" id="rules-modal">
@@ -119,6 +64,7 @@ function switchTheme(cssFile) {
 </div>
 </div>
 </div><br/>
+
 <h2 class="section-title skills-title">Skills</h2>
 <div id="skills-section">
 <div id="skills-container"></div>
@@ -126,15 +72,19 @@ function switchTheme(cssFile) {
 <button onclick="addSkill()" type="button">+ New Skill</button>
 </div>
 </div>
+
 <h2 class="section-title">Conditions</h2>
 <div id="conditions-section">
-<div id="conditions-container"></div>
-<div style="margin-top: 10px;">
-<button onclick="addCondition()" type="button">+ New Condition</button>
-</div>
+  <div id="conditions-container"></div>
+  <div style="margin-top: 10px;">
+    <button onclick="addCondition()" type="button">+ New Condition</button>
+  </div>
 </div>
 <br/>
-<h2 class="section-title">Inventory</h2>
+
+    
+
+    <h2 class="section-title">Inventory</h2>
 <div id="items-section">
 <div id="items-container"></div>
 <div style="margin-top: 10px;">
