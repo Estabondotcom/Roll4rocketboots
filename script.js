@@ -506,3 +506,62 @@ function setTheme(theme) {
     link.href = 'style-default.css';
   }
 }
+
+
+
+// === Auto-Save and Load ===
+function saveFormState() {
+    const elements = document.querySelectorAll("input, textarea, select");
+    const data = {};
+    elements.forEach(el => {
+        if (el.type === "checkbox") {
+            data[el.id] = el.checked;
+        } else {
+            data[el.id] = el.value;
+        }
+    });
+    data["theme"] = document.getElementById("theme-link")?.getAttribute("href");
+    localStorage.setItem("formState", JSON.stringify(data));
+}
+
+function loadFormState() {
+    const saved = localStorage.getItem("formState");
+    if (!saved) return;
+    const data = JSON.parse(saved);
+    Object.keys(data).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if (el.type === "checkbox") {
+                el.checked = data[id];
+            } else {
+                el.value = data[id];
+            }
+        }
+    });
+    if (data["theme"]) {
+        const themeLink = document.getElementById("theme-link");
+        if (themeLink) {
+            themeLink.setAttribute("href", data["theme"]);
+        }
+    }
+}
+
+window.addEventListener("load", () => {
+    loadFormState();
+    document.querySelectorAll("input, textarea, select").forEach(el => {
+        el.addEventListener("input", saveFormState);
+        el.addEventListener("change", saveFormState);
+    });
+
+    const themeButtons = document.querySelectorAll("button[data-theme]");
+    themeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const themeHref = btn.getAttribute("data-theme");
+            const themeLink = document.getElementById("theme-link");
+            if (themeLink && themeHref) {
+                themeLink.setAttribute("href", themeHref);
+                saveFormState();
+            }
+        });
+    });
+});
